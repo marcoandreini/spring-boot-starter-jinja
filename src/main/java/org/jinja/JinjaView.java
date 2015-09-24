@@ -17,13 +17,11 @@ import com.hubspot.jinjava.interpret.FatalTemplateErrorsException;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author Marco Andreini
  *
  */
-@Slf4j
 public class JinjaView extends AbstractTemplateView {
 
 	@Getter @Setter
@@ -84,7 +82,6 @@ public class JinjaView extends AbstractTemplateView {
 
 	@Override
 	public boolean checkResource(Locale locale) throws Exception {
-		log.info("resource checked {}", getUrl());
 		try {
 			// XXX: interpreter could be null...
 			engine.getResourceLocator().getString(getUrl(), encoding, null);
